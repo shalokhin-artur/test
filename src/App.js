@@ -8,7 +8,7 @@ function App() {
   const { isLoading } = useInitCryptoCasino(ref, "en");
 
   return (
-    <div className="App" ref={ref} style={{ height: "500px", overflow: "hidden" }}>
+    <div className="App" ref={ref} role="main" style={{ height: "500px", overflow: "hidden" }}>
       {isLoading && "Loading casino..."}
     </div>
   );
