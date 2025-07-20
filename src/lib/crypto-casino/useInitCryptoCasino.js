@@ -37,12 +37,12 @@ export const useInitCryptoCasino = (ref, language) => {
   }, []);
 
   useEffect(() => {
-    if (!isLoading) {
+    if (!isLoading && window.cryptoCasino && window.cryptoCasino.init) {
       window.cryptoCasino.init(ref.current, language);
     }
   }, [isLoading, ref, language]);
 
   return {
-    isLoading: isJSLoading && isCssLoading,
+    isLoading: isJSLoading || isCssLoading,
   };
 };
